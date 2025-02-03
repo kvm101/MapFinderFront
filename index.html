@@ -4,59 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mapFinder</title>
-    <link rel="icon" type="image/x-icon" href="/frontend/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Введіть адресу: </h1>
 
-    <input id="query" placeholder="Пошук...">
-    <button id="search">🔍 Знайти</button>
-
-    <h1>Результат: </h1>
-
-    <div>
-    <input id="address" placeholder="Адреса" readonly>
-    <input id="link" placeholder="Посилання" readonly>
-    <input id="coordinates" placeholder="Кординати" readonly>
+    <div class="row">
+        <div class="inp-border a1">
+            <input id="query" placeholder="Пошук..." type="search" class="input">
+        </div>
+        <button class="button-6" id="search">🔍 Знайти</button>
     </div>
 
-    <script>
-        document.getElementById("search").addEventListener("click", function () {
-            const query = document.getElementById("query").value;
-            
-            // Преобразуємо введену адресу в формат JSON
-            const data = JSON.stringify(query);
+    <h1 id="result">Результат: </h1>
 
-            // Створюємо новий XMLHttpRequest
-            const xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
+    <div>
+        <div class="row-nospace">
+            <h2>Адреса</h2>
+            <input class="input-2" id="address" placeholder="Адреса" readonly>
+            <button class="button-68" id="copy_address">Копіювати адресу</button>
+        </div>
+        
+        <div class="row-nospace">
+            <h2>Посилання</h2>
+            <input class="input-2" id="link" placeholder="Посилання" readonly>
+            <button class="button-68" id="copy_link">Копіювати посилання</button>
+            <button class="button-68" id="open_link">Відкрити в Картах</button>
+        </div>
 
-            // Слухаємо зміну стану запиту
-            xhr.addEventListener("readystatechange", function () {
-                if (this.readyState === this.DONE) {
-                    if (this.status === 200) {
-                        try {
-                            const responseData = JSON.parse(this.responseText);
+        <div class="row-nospace">
+            <h2>Кординати</h2>
+            <input class="input-2" id="coordinates" placeholder="Кординати" readonly>
+            <button class="button-68" id="copy_coordinates">Копіювати кординати</button>
+            <button class="button-68" id="open_coordinates">Відкрити в Картах</button>
+        </div>
+    </div>
 
-                            // Заповнюємо поля результату
-                            document.getElementById("address").value = responseData.address || "Немає даних";
-                            document.getElementById("link").value = responseData.link || "Немає даних";
-                            document.getElementById("coordinates").value = responseData.coordinates || "Немає даних";
-                        } catch (error) {
-                            console.error("Помилка при парсингу JSON:", error);
-                        }
-                    } else {
-                        console.error("Помилка запиту:", this.status, this.statusText);
-                    }
-                }
-            });
-
-            // Відправляємо POST-запит
-            xhr.open("POST", "https://mapfinder-production.up.railway.app/addr");
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-            xhr.send(data);
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>

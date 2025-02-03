@@ -1,0 +1,271 @@
+h1 {
+  font-style: Georgia;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  margin-left: 8%;
+}
+
+h2 {
+  font-style: Georgia;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
+
+  body {
+      font-style: Georgia;
+      font-size: 14px;
+  
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center; /* Центруємо елементи по горизонталі */
+    align-items: center;   /* Центруємо елементи по вертикалі */
+    margin: 0 auto; /* Центруємо сам контейнер */
+  }
+
+  .row-nospace {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Перший стовпець для input, другий для кнопок */
+    gap: 10px; /* Відстань між колонками */
+    width: 70%; /* Ширина контейнера */
+    margin: 0 auto; /* Центрування */
+    align-items: center; /* Центрування по вертикалі */
+    margin-bottom: 20px; /* Нижній відступ для контейнера */
+    border: 2px solid #ccc; /* Рамка навколо контейнера */
+    padding: 20px; /* Відступи всередині контейнера */
+    border-radius: 8px; /* Заокруглені кути рамки */
+}
+
+/* Стиль для текстового поля */
+.row-nospace .text-field {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Для того, щоб елемент займав всю ширину */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Рамка навколо елемента */
+    border-radius: 4px; /* Заокруглені кути */
+}
+
+/* Стиль для змінених кнопок */
+.row-nospace .action-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc; /* Рамка навколо кнопок */
+    border-radius: 4px; /* Заокруглені кути для кнопок */
+    background-color: #f0f0f0; /* Легкий фон для кнопок */
+}
+
+/* Для мобільних пристроїв (якщо потрібно змінити макет на маленьких екранах) */
+@media (max-width: 767px) {
+    .row-nospace {
+        grid-template-columns: 1fr; /* Один стовпець на мобільних */
+    }
+    
+    .row-nospace .action-button {
+        width: 100%; /* Кнопки на мобільних займатимуть всю ширину */
+        margin-top: 10px; /* Відстань між кнопками */
+    }
+}
+
+
+
+
+
+/*--------------------------------------------*/
+.button-68 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #276dae;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-68:hover {
+  background-color: #1e3984;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-68:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-68:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+
+
+
+
+/*-----------------------------------*/
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+
+
+
+
+
+/*--------------------------------*/
+.inp-border {
+  padding: 5px;
+  margin: 2em 1em;
+  border-radius: 50px;
+  max-width: 300px;
+}
+
+.input {
+  text-align: center;
+  padding: 15px;
+  outline: none;
+  border: double 0;
+  background: #252525;
+  border-radius: 50px;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.a1 {
+  background: linear-gradient(
+    330.28deg,
+    #ff6e1d 100%,
+    #ff6e1d 100%,
+    #ff6e1d 100%
+  );
+}
+
+.a1 > input {
+  color: #caab98;
+}
+
+.a1 > input::placeholder {
+  color: #ff6e1d;
+  opacity: 0.6;
+}
+
+.inp-border:focus-within {
+  background: linear-gradient(
+    330.28deg,
+    #2cfff2 0%,
+    #1e78ff 30.73%,
+    #ff54a6 55.73%,
+    #ff6e1d 79.17%,
+    #ff3e3e 100%
+  );
+}
+
+.inp-border:hover {
+  background: linear-gradient(
+    330.28deg,
+    #2cfff2 0%,
+    #1e78ff 30.73%,
+    #ff54a6 55.73%,
+    #ff6e1d 79.17%,
+    #ff3e3e 100%
+  );
+}
+
+ 
+
+
+ /*--------------------------------------*/ 
+.input-2 {
+  width: 100%;
+  max-width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.input-2:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input-2:active {
+  transform: scale(0.95);
+}
+
+.input-2:focus {
+  border: 2px solid grey;
+}
