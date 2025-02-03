@@ -1,10 +1,8 @@
 document.getElementById("search").addEventListener("click", function () {
-    let query = document.getElementById("query").value;
+    const query = document.getElementById("query").value;
 
-    query = query.replace(/[\n\r]/g, " ");
-    query = `"${query}"`;
-
-    const data = JSON.stringify(query);
+    // Преобразуємо введену адресу в формат JSON
+    const data = JSON.stringify({ address: query });
 
     // Створюємо новий XMLHttpRequest
     const xhr = new XMLHttpRequest();
@@ -21,14 +19,6 @@ document.getElementById("search").addEventListener("click", function () {
                     document.getElementById("address").value = responseData.address || "Немає даних";
                     document.getElementById("link").value = responseData.link || "Немає даних";
                     document.getElementById("coordinates").value = responseData.coordinates || "Немає даних";
-
-                    // Прокрутка вниз після отримання відповіді
-                    const targetElement = document.getElementById('result');
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
                 } catch (error) {
                     console.error("Помилка при парсингу JSON:", error);
                 }
@@ -36,16 +26,21 @@ document.getElementById("search").addEventListener("click", function () {
                 console.error("Помилка запиту:", this.status, this.statusText);
             }
         }
+
+        const targetElement = document.getElementById('result');
+        // Прокручуємо до елемента з плавним ефектом
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        document.getElementById("query").value = '';
     });
 
     // Відправляємо POST-запит
     xhr.open("POST", "https://mapfinder-production.up.railway.app/addr");
     xhr.setRequestHeader("Content-Type", "application/json");
-
     xhr.send(data);
-
-    // Очищуємо поле після натискання кнопки
-    document.getElementById("query").value = '';
 });
 
 
