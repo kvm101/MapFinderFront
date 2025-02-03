@@ -1,9 +1,7 @@
 document.getElementById("search").addEventListener("click", function () {
-    query = document.getElementById("query").value;
-    
-    query = '"' + query + '"'
+    let query = document.getElementById("query").value;
 
-    // Преобразуємо введену адресу в формат JSON
+    // Перетворюємо в JSON-формат
     const data = JSON.stringify(query);
 
     // Створюємо новий XMLHttpRequest
@@ -21,6 +19,14 @@ document.getElementById("search").addEventListener("click", function () {
                     document.getElementById("address").value = responseData.address || "Немає даних";
                     document.getElementById("link").value = responseData.link || "Немає даних";
                     document.getElementById("coordinates").value = responseData.coordinates || "Немає даних";
+
+                    // Прокрутка вниз після отримання відповіді
+                    const targetElement = document.getElementById('result');
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
                 } catch (error) {
                     console.error("Помилка при парсингу JSON:", error);
                 }
@@ -28,16 +34,6 @@ document.getElementById("search").addEventListener("click", function () {
                 console.error("Помилка запиту:", this.status, this.statusText);
             }
         }
-
-        const targetElement = document.getElementById('result');
-
-        // Прокручуємо до елемента з плавним ефектом
-        targetElement.scrollIntoView({
-            behavior: 'smooth', // плавне прокручування
-            block: 'start'      // прокрутка до початку елемента
-        });
-
-        document.getElementById("query").value = ''
     });
 
     // Відправляємо POST-запит
@@ -45,7 +41,11 @@ document.getElementById("search").addEventListener("click", function () {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.send(data);
+
+    // Очищуємо поле після натискання кнопки
+    document.getElementById("query").value = '';
 });
+
 
 document.getElementById("copy_address").addEventListener("click", function() {
     address = document.getElementById('address');
