@@ -1,9 +1,7 @@
 document.getElementById("search").addEventListener("click", function () {
-    const query = document.getElementById("query").value;
+    query = document.getElementById("query").value;
     
     query = '"' + query + '"'
-
-    alert(query)
 
     // Преобразуємо введену адресу в формат JSON
     const data = JSON.stringify(query);
