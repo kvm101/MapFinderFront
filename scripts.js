@@ -1,9 +1,9 @@
 document.getElementById("search").addEventListener("click", function () {
     let query = document.getElementById("query").value;
 
-    alert(query)
+    query = query.replace(/[\n\r]/g, " ");
+    query = `"${query}"`;
 
-    // Перетворюємо в JSON-формат
     const data = JSON.stringify(query);
 
     // Створюємо новий XMLHttpRequest
