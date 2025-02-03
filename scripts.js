@@ -1,6 +1,8 @@
 document.getElementById("search").addEventListener("click", function () {
     let query = document.getElementById("query").value;
 
+    alert(query)
+
     // Перетворюємо в JSON-формат
     const data = JSON.stringify(query);
 
