@@ -1,6 +1,8 @@
 document.getElementById("search").addEventListener("click", function () {
     const query = document.getElementById("query").value;
     
+    query = query.replace(/[\r\n]+/g, ' ');
+
     // Преобразуємо введену адресу в формат JSON
     const data = JSON.stringify(query);
 
