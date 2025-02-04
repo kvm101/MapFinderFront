@@ -100,6 +100,15 @@ h2 {
     }
 }
 
+#attention {
+  margin-top: 40px;
+  text-align: center;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.671);
+}
+
 footer {
   margin-top: 60px; 
   text-align: center;
@@ -305,7 +314,6 @@ footer {
 .input-2:focus {
   border: 2px solid grey;
 }
-
 
 
 
