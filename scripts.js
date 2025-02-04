@@ -4,7 +4,10 @@ document.getElementById("search").addEventListener("click", function () {
     query = text.replace(/[^a-zA-Z0-9]$/, '');
 
     const loaderContainer = document.getElementById("loader-container");
-    loaderContainer.style.display = "flex"; // Показуємо анімацію
+
+    // Скидаємо анімацію (знімаємо клас hide, якщо він був раніше доданий)
+    loaderContainer.classList.remove("hide");
+    loaderContainer.style.display = "flex"; 
 
     const data = JSON.stringify(query);
 
