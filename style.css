@@ -101,8 +101,7 @@ h2 {
 }
 
 #attention {
-  margin-top: 40px;
-  text-align: center;
+  
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -115,6 +114,11 @@ footer {
   font-size: 12px;
 }
 
+.row-attention {
+  
+  display: flex;
+  flex-direction: row;
+}
 
 
 
