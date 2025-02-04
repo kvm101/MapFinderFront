@@ -33,7 +33,7 @@ document.getElementById("search").addEventListener("click", function () {
             // Плавно ховаємо анімацію після 3 секунд
             setTimeout(function () {
                 loaderContainer.classList.add("hide"); // Додаємо клас для зникнення
-            }, 3000); // Чекаємо 3 секунди
+            }, 1000); // Чекаємо 1 секунду
         }
 
         const targetElement = document.getElementById('result');
