@@ -2,7 +2,7 @@ document.getElementById("search").addEventListener("click", function () {
     const query = document.getElementById("query").value;
 
     // Преобразуємо введену адресу в формат JSON
-    const data = JSON.stringify({ address: query });
+    const data = JSON.stringify(query);
 
     // Створюємо новий XMLHttpRequest
     const xhr = new XMLHttpRequest();
@@ -40,7 +40,7 @@ document.getElementById("search").addEventListener("click", function () {
     // Відправляємо POST-запит
     xhr.open("POST", "https://mapfinder-production.up.railway.app/addr");
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(data);
+    xhr.send('"' + data + '"');
 });
 
 
