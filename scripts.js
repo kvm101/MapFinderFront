@@ -3,7 +3,6 @@ document.getElementById("search").addEventListener("click", function () {
 
     query = text.replace(/[^a-zA-Z0-9]$/, '');
 
-    alert(query)
     const data = JSON.stringify(query);
 
     // Створюємо новий XMLHttpRequest
