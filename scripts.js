@@ -1,7 +1,7 @@
 document.getElementById("search").addEventListener("click", function () {
     let query = document.getElementById("query").value;
 
-    query = query.replace(/[^a-zA-Z]$/, '');
+    query = query.replace(/[^a-zA-Z0-9]$/, '');
     const data = JSON.stringify(query);
 
     // Створюємо новий XMLHttpRequest
