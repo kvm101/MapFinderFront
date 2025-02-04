@@ -1,12 +1,16 @@
 h1 {
-  font-style: Georgia;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
   font-size: 35px;
   color: rgb(0, 0, 0);
   margin-left: 8%;
 }
 
 h2 {
-  font-style: Georgia;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
   font-size: 25px;
   color: rgb(0, 0, 0);
 }
@@ -24,53 +28,52 @@ h2 {
   .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center; /* Центруємо елементи по горизонталі */
-    align-items: center;   /* Центруємо елементи по вертикалі */
-    margin: 0 auto; /* Центруємо сам контейнер */
+    justify-items: center; 
+    align-items: center;  
+    margin: 0 auto; 
   }
 
   .row-nospace {
     display: grid;
-    grid-template-columns: 1fr auto; /* Перший стовпець для input, другий для кнопок */
-    gap: 10px; /* Відстань між колонками */
-    width: 70%; /* Ширина контейнера */
-    margin: 0 auto; /* Центрування */
-    align-items: center; /* Центрування по вертикалі */
-    margin-bottom: 20px; /* Нижній відступ для контейнера */
-    border: 2px solid #ccc; /* Рамка навколо контейнера */
-    padding: 20px; /* Відступи всередині контейнера */
-    border-radius: 8px; /* Заокруглені кути рамки */
+    grid-template-columns: 1fr auto;
+    gap: 10px; 
+    width: 70%; 
+    margin: 0 auto; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    border: 2px solid #ccc; 
+    padding: 20px; 
+    border-radius: 8px; 
 }
 
 /* Стиль для текстового поля */
 .row-nospace .text-field {
     padding: 10px;
     font-size: 16px;
-    width: 100%; /* Для того, щоб елемент займав всю ширину */
+    width: 100%; 
     box-sizing: border-box;
-    border: 1px solid #ccc; /* Рамка навколо елемента */
-    border-radius: 4px; /* Заокруглені кути */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
 }
 
-/* Стиль для змінених кнопок */
+
 .row-nospace .action-button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    border: 1px solid #ccc; /* Рамка навколо кнопок */
-    border-radius: 4px; /* Заокруглені кути для кнопок */
-    background-color: #f0f0f0; /* Легкий фон для кнопок */
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    background-color: #f0f0f0; 
 }
 
-/* Для мобільних пристроїв (якщо потрібно змінити макет на маленьких екранах) */
 @media (max-width: 767px) {
     .row-nospace {
-        grid-template-columns: 1fr; /* Один стовпець на мобільних */
+        grid-template-columns: 1fr; 
     }
     
     .row-nospace .action-button {
-        width: 100%; /* Кнопки на мобільних займатимуть всю ширину */
-        margin-top: 10px; /* Відстань між кнопками */
+        width: 100%; 
+        margin-top: 10px; 
     }
 }
 
