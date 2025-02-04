@@ -1,5 +1,11 @@
 body {
   background-color:whitesmoke;
+  margin-top: 50px;
+}
+
+hr {
+  margin-top: 100px;
+  background-color: #1e3984;
 }
 
 h1 {
@@ -8,7 +14,7 @@ h1 {
   color: rgb(0, 0, 0);
   font-size: 35px;
   color: rgb(0, 0, 0);
-  margin-left: 8%;
+  margin-left: 10%;
 }
 
 h2 {
@@ -20,7 +26,7 @@ h2 {
 }
 
   #result {
-    margin-top: 200px;
+    margin-top: 100px;
   }
 
   body {
@@ -35,13 +41,14 @@ h2 {
     justify-items: center; 
     align-items: center;  
     margin: 0 auto; 
+    margin-top: -30px;
   }
 
   .row-nospace {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 10px; 
-    width: 70%; 
+    width: 75%; 
     margin: 0 auto; 
     align-items: center; 
     margin-bottom: 20px; 
@@ -81,6 +88,11 @@ h2 {
     }
 }
 
+footer {
+  margin-top: 60px; 
+  text-align: center;
+  font-size: 12px;
+}
 
 
 
@@ -98,7 +110,7 @@ h2 {
   cursor: pointer;
   display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1.5;
@@ -258,7 +270,7 @@ h2 {
  /*--------------------------------------*/ 
 .input-2 {
   width: 100%;
-  max-width: 220px;
+  max-width: 255px;
   height: 45px;
   padding: 12px;
   border-radius: 12px;
@@ -280,4 +292,68 @@ h2 {
 
 .input-2:focus {
   border: 2px solid grey;
+}
+
+
+
+
+
+
+/* Контейнер для анімації завантаження */
+.loader-container {
+  display: none; /* Спочатку сховати контейнер */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Висота на весь екран */
+  position: fixed; /* Фіксоване позиціонування */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+  z-index: 9999; /* Вищий рівень над іншими елементами */
+  opacity: 1;
+  transition: opacity 1s ease; /* Додаємо плавне зникнення */
+}
+
+/* Анімація ripple */
+.ripple {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.ripple::before, .ripple::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #FF5C35; /* Колір обведення */
+  opacity: 0;
+  animation: ripple 3s infinite;
+}
+
+.ripple::after {
+  animation-delay: 1.5s;
+}
+
+@keyframes ripple {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2.5);
+      opacity: 0;
+  }
+}
+
+/* Відображення анімації завантаження */
+.loader-container.hide {
+  opacity: 0;
+  pointer-events: none; /* Виключаємо кліки під час анімації */
 }

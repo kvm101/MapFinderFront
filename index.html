@@ -13,34 +13,44 @@
 
     <div class="row">
         <div class="inp-border a1">
-            <input id="query" placeholder="Пошук..." type="search" class="input">
+            <input class="input" id="query" placeholder="Пошук..." type="search">
         </div>
         <button class="button-6" id="search">🔍 Знайти</button>
+    </div>
+    <hr>
+
+    <div class="loader-container" id="loader-container">
+        <div class="ripple"></div>
     </div>
 
     <h1 id="result">Результат: </h1>
 
     <div>
         <div class="row-nospace">
-            <h2>Адреса</h2>
+            <h2>Адреса 🚛</h2>
             <input class="input-2" id="address" placeholder="Адреса" readonly>
             <button class="button-68" id="copy_address">Копіювати адресу</button>
         </div>
         
         <div class="row-nospace">
-            <h2>Посилання</h2>
+            <h2>Посилання <img src="images/google.svg" width="30px" style="margin-bottom: -6px;"></h2>
             <input class="input-2" id="link" placeholder="Посилання" readonly>
             <button class="button-68" id="copy_link">Копіювати посилання</button>
             <button class="button-68" id="open_link">Відкрити в Картах</button>
         </div>
 
         <div class="row-nospace">
-            <h2>Кординати</h2>
+            <h2>Кординати 🌍</h2>
             <input class="input-2" id="coordinates" placeholder="Кординати" readonly>
             <button class="button-68" id="copy_coordinates">Копіювати кординати</button>
             <button class="button-68" id="open_coordinates">Відкрити в Картах</button>
         </div>
     </div>
+
+    <footer>
+        <p>Recomend for mobile view. Prototype version.</p>
+    </footer>
+
 
     <script src="scripts.js"></script>
 </body>

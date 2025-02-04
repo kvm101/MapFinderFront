@@ -1,7 +1,10 @@
 document.getElementById("search").addEventListener("click", function () {
-    let text = document.getElementById("query").value;
 
+    let text = document.getElementById("query").value;
     query = text.replace(/[^a-zA-Z0-9]$/, '');
+
+    const loaderContainer = document.getElementById("loader-container");
+    loaderContainer.style.display = "flex"; // Показуємо анімацію
 
     const data = JSON.stringify(query);
 
@@ -26,6 +29,11 @@ document.getElementById("search").addEventListener("click", function () {
             } else {
                 console.error("Помилка запиту:", this.status, this.statusText);
             }
+
+            // Плавно ховаємо анімацію після 3 секунд
+            setTimeout(function () {
+                loaderContainer.classList.add("hide"); // Додаємо клас для зникнення
+            }, 3000); // Чекаємо 3 секунди
         }
 
         const targetElement = document.getElementById('result');
