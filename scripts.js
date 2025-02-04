@@ -48,17 +48,13 @@ document.getElementById("search").addEventListener("click", function () {
 document.getElementById("copy_address").addEventListener("click", function() {
     address = document.getElementById('address');
 
-    navigator.clipboard.writeText(address.value).then(function() {
-        alert('Текст скопійовано!');
-    })
+    navigator.clipboard.writeText(address.value)
 });
 
 document.getElementById("copy_link").addEventListener("click", function() {
     link = document.getElementById('link');
 
-    navigator.clipboard.writeText(link.value).then(function() {
-        alert('Текст скопійовано!');
-    })
+    navigator.clipboard.writeText(link.value)
 });
 
 document.getElementById("open_link").addEventListener("click", function() {
@@ -70,9 +66,7 @@ document.getElementById("open_link").addEventListener("click", function() {
 document.getElementById("copy_coordinates").addEventListener("click", function() {
     coordinates = document.getElementById('coordinates');
 
-    navigator.clipboard.writeText(coordinates.value).then(function() {
-        alert('Текст скопійовано!');
-    })
+    navigator.clipboard.writeText(coordinates.value)
 });
 
 document.getElementById("open_coordinates").addEventListener("click", function() {
