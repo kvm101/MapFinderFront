@@ -60,12 +60,26 @@ document.getElementById("copy_address").addEventListener("click", function() {
     address = document.getElementById('address');
 
     navigator.clipboard.writeText(address.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
 });
 
 document.getElementById("copy_link").addEventListener("click", function() {
     link = document.getElementById('link');
 
     navigator.clipboard.writeText(link.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
 });
 
 document.getElementById("open_link").addEventListener("click", function() {
@@ -78,6 +92,13 @@ document.getElementById("copy_coordinates").addEventListener("click", function()
     coordinates = document.getElementById('coordinates');
 
     navigator.clipboard.writeText(coordinates.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
 });
 
 document.getElementById("open_coordinates").addEventListener("click", function() {
