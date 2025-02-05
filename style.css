@@ -396,6 +396,7 @@ footer {
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 0;
+  pointer-events: none;
 }
 
 #copy-message.show {
