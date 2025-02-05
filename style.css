@@ -199,6 +199,7 @@ footer {
   touch-action: manipulation;
   vertical-align: baseline;
   width: auto;
+  z-index: 1;
 }
 
 .button-6:hover,
@@ -394,8 +395,16 @@ footer {
   font-size: 18px;
   opacity: 0;
   transition: opacity 0.5s ease;
+  z-index: 0;
 }
 
 #copy-message.show {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .copied-text {
+      font-size: 12px;
+      padding: 4px 8px;
+  }
 }

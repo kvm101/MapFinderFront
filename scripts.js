@@ -1,27 +1,31 @@
 document.getElementById("search").addEventListener("click", function () {
+
     let text = document.getElementById("query").value;
     query = text.replace(/[^a-zA-Z0-9]$/, '');
 
     const loaderContainer = document.getElementById("loader-container");
 
-    // Показуємо анімацію
+    // Скидаємо анімацію (знімаємо клас hide, якщо він був раніше доданий)
     loaderContainer.classList.remove("hide");
-    loaderContainer.style.display = "flex";
+    loaderContainer.style.display = "flex"; 
 
     const data = JSON.stringify(query);
 
+    // Створюємо новий XMLHttpRequest
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
+    // Слухаємо зміну стану запиту
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             if (this.status === 200) {
                 try {
                     const responseData = JSON.parse(this.responseText);
 
-                    document.getElementById("address").value = responseData.address || "Немає даних";
-                    document.getElementById("link").value = responseData.link || "Немає даних";
-                    document.getElementById("coordinates").value = responseData.coordinates || "Немає даних";
+                    // Заповнюємо поля результату
+                    document.getElementById("address").value = '    ' + responseData.address + '    ' || "Немає даних";
+                    document.getElementById("link").value = '    ' + responseData.link + '    ' || "Немає даних";
+                    document.getElementById("coordinates").value = '    ' + responseData.coordinates + '    ' || "Немає даних";
                 } catch (error) {
                     console.error("Помилка при парсингу JSON:", error);
                 }
@@ -29,13 +33,14 @@ document.getElementById("search").addEventListener("click", function () {
                 console.error("Помилка запиту:", this.status, this.statusText);
             }
 
-            // Ховаємо анімацію через 3 секунди
+            // Плавно ховаємо анімацію після 3 секунд
             setTimeout(function () {
-                loaderContainer.classList.add("hide");
-            }, 3000); // 3 секунди
+                loaderContainer.classList.add("hide"); // Додаємо клас для зникнення
+            }, 1000); // Чекаємо 1 секунду
         }
 
         const targetElement = document.getElementById('result');
+        // Прокручуємо до елемента з плавним ефектом
         targetElement.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
@@ -44,8 +49,62 @@ document.getElementById("search").addEventListener("click", function () {
         document.getElementById("query").value = '';
     });
 
-    // Виправлений JSON-запит
+    // Відправляємо POST-запит
     xhr.open("POST", "https://mapfinder-production.up.railway.app/addr");
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(data);
+    xhr.send('"' + data + '"');
+});
+
+
+document.getElementById("copy_address").addEventListener("click", async function() {
+    address = document.getElementById('address');
+
+    navigator.clipboard.writeText(address.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
+});
+
+document.getElementById("copy_link").addEventListener("click", async function() {
+    link = document.getElementById('link');
+
+    navigator.clipboard.writeText(link.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
+});
+
+document.getElementById("open_link").addEventListener("click", function() {
+    link = document.getElementById('link');
+
+    window.open(link.value, '_blank');
+});
+
+document.getElementById("copy_coordinates").addEventListener("click", async function() {
+    coordinates = document.getElementById('coordinates');
+
+    navigator.clipboard.writeText(coordinates.value)
+
+    const message = document.getElementById("copy-message");
+    message.classList.add("show");
+
+    setTimeout(() => {
+        message.classList.remove("show");
+    }, 2000);
+});
+
+document.getElementById("open_coordinates").addEventListener("click", function() {
+    coordinates = document.getElementById('coordinates').value;
+    coordinates = coordinates.replace(/\s+/g, '');
+
+    url_coordinates = 'https://maps.google.com/?q=' + coordinates
+    window.open(url_coordinates, '_blank');
 });
