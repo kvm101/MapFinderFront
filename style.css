@@ -1,5 +1,8 @@
 header {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 0 auto;
   background-color: #276dae;
   margin: -8px -1% 0 -1.87%;
   height: 60px;
@@ -35,6 +38,14 @@ h2 {
   color: rgb(0, 0, 0);
   font-size: 25px;
   color: rgb(0, 0, 0);
+}
+
+h3 {
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 20px;
+  margin-top: 16px;
 }
 
   #result {
