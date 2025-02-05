@@ -23,9 +23,9 @@ document.getElementById("search").addEventListener("click", function () {
                     const responseData = JSON.parse(this.responseText);
 
                     // Заповнюємо поля результату
-                    document.getElementById("address").value = responseData.address || "Немає даних";
-                    document.getElementById("link").value = responseData.link || "Немає даних";
-                    document.getElementById("coordinates").value = responseData.coordinates || "Немає даних";
+                    document.getElementById("address").value = '    ' + responseData.address || "Немає даних";
+                    document.getElementById("link").value = '    ' + responseData.link || "Немає даних";
+                    document.getElementById("coordinates").value = '    ' + responseData.coordinates || "Немає даних";
                 } catch (error) {
                     console.error("Помилка при парсингу JSON:", error);
                 }
