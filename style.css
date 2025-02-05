@@ -262,19 +262,19 @@ footer {
 .a1 {
   background: linear-gradient(
     330.28deg,
-    #ff6e1d 100%,
-    #ff6e1d 100%,
-    #ff6e1d 100%
+    #276dae 100%,
+    #276dae 100%,
+    #276dae 100%
   );
 }
 
 .a1 > input {
-  color: #caab98;
+  color: #ffffff;
 }
 
 .a1 > input::placeholder {
-  color: #ff6e1d;
-  opacity: 0.6;
+  color: #bfddfa;
+  opacity: 0.8;
 }
 
 .inp-border:focus-within {
@@ -293,9 +293,9 @@ footer {
     330.28deg,
     #2cfff2 0%,
     #1e78ff 30.73%,
-    #ff54a6 55.73%,
-    #ff6e1d 79.17%,
-    #ff3e3e 100%
+    #54ffc6 55.73%,
+    #1d52ff 79.17%,
+    #713eff 100%
   );
 }
 
@@ -362,7 +362,7 @@ footer {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 4px solid #FF5C35; /* Колір обведення */
+  border: 4px solid #276dae; /* Колір обведення */
   opacity: 0;
   animation: ripple 3s infinite;
 }
