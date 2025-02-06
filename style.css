@@ -420,3 +420,22 @@ footer {
       padding: 4px 8px;
   }
 }
+
+
+/* Для анімація вказівника внизу пошуку */ 
+
+@keyframes smoothSway {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sway {
+  animation: smoothSway 3s ease-in-out infinite;
+}
