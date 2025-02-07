@@ -368,7 +368,7 @@ footer {
 }
 
 .ripple::after {
-  animation-delay: 0.3s;
+  animation-delay: 0.1s;
 }
 
 @keyframes ripple {
